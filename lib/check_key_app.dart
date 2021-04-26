@@ -12,8 +12,8 @@ class CheckKeyApp {
     return version;
   }
 
-  static Future<String> get isAppInstalled async {
+  static Future<bool> get isAppInstalled async {
     final String version = await _channel.invokeMethod('isAppInstalled');
-    return version;
+    return version == 'success';
   }
 }
